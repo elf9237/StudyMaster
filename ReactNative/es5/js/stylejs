@@ -1,0 +1,71 @@
+console.log('1、对象冒充实现继承');
+function classA(sColor){
+  this.color = sColor;
+  this.sayColor = function(){
+    console.log(this.color);
+  };
+}
+function classB(sColor,sName){
+  this.newMethod = classA;
+  this.newMethod(sColor);
+  delete this.newMethod;
+
+  this.name = sName;
+  this.sayName = function(){
+    console.log(this.name);
+  };
+}
+var objA = new classA('red');
+objA.sayColor();
+
+var objB = new classB('blue','andy');
+objB.sayColor();
+objB.sayName();
+
+console.log('2、call方式实现继承');
+
+function classC(sColor){
+  this.color = sColor;
+  this.sayColor = function(){
+    console.log(this.color);
+  };
+}
+function classD(sColor,sName){
+  classC.call(this, sColor);
+
+  this.name = sName;
+  this.sayName = function(){
+    console.log(this.name);
+  };
+}
+
+var objC = new classC('white');
+objC.sayColor();
+var objD = new classD('yellow','bruce');
+objD.sayColor();
+objD.sayName();
+
+console.log('3、apply方式，参数变成数组，实现继承');
+
+console.log('4、原型链+构造函数方式实现继承');
+function classE(sColor){
+  this.color = sColor;
+}
+classE.prototype.sayColor = function(){
+  console.log(this.color);
+};
+
+function classF(sColor,sName){
+  classE.call(this, sColor);
+  this.name = sName;
+}
+classF.prototype = new classE();
+classF.prototype.sayName = function(){
+  console.log(this.name);
+};
+
+var objE = new classE('pink');
+objE.sayColor();
+var objF = new classF('dark','mei');
+objF.sayColor();
+objF.sayName();

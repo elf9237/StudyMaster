@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es6 study</title>
+</head>
+<body>
+	
+</body>
+<!-- <script type="text/javascript" src="./es6.js"></script> -->
+<!-- es6 Array -->
+<!-- <script type="text/javascript" src="./js/es6_Array.js"></script> -->
+<!-- 第一章 let and const -->
+<!-- <script type="text/javascript" src="./js/1 let and const.js"></script> -->
+<script type="text/javascript">
+var str = "Visit W3School, W3School is a place to study web technology.W3School"; 
+var patt = new RegExp("W3School","g");
+var result;
+
+while ((result = patt.exec(str)) != null)  {
+  console.log(result);
+  console.log(patt.lastIndex);
+ }
+</script>
+</html>
