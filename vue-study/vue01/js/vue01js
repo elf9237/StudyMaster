@@ -1,0 +1,25 @@
+const user = {template:`
+  <div class="user">
+    <h1>user {{$route.params.id}}</h1>
+    <router-view></router-view>
+  </div>
+`};
+// const bar ={template:'<div>bar</div>'};
+const userHome = {template:'<div class="user-home">home</div>'}
+const userProfile = {template:'<div class="user-home">profile</div>'}
+const userPosts = {template:'<div class="user-home">posts</div>'}
+
+const routes = [
+  {path:'/user/:id',component:user,
+  children:[
+    {path:'',component:userHome},
+    {path:'profile',component:userProfile},
+    {path:'posts',component:userPosts}
+  ]}
+];
+const router = new VueRouter({
+  routes:routes
+});
+const app = new Vue({
+  router:router
+}).$mount('#app');

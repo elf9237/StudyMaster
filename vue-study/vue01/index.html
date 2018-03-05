@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue</title>
+
+</head>
+<body>
+  <div id="app">
+    <h1>hello vue!</h1>
+    <p>
+      <router-link to="/user/foo">go to foo</router-link>
+      <router-link to="/user/foo/profile">go to foo</router-link>
+      <router-link to="/user/foo/posts">go to foo</router-link>
+      <router-link to="/user/bar">go to bar</router-link>
+    </p>
+    <router-view></router-view>
+  </div>
+</body>
+<script src="https:/unpkg.com/vue/dist/vue.js"></script>
+<script src="https:/unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="./js/vue01js"></script>
+</html>
